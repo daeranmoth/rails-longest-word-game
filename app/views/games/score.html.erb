@@ -1,0 +1,14 @@
+<h1>RESULT</h1>
+
+<% if @included %>
+<%      if @english_word %>
+<%        @score %>
+<%=        "Congratulations ! #{@word} is a valid English word! score : #{@score} total score :#{session[:score]}" %>
+<%      else %>
+<%=        "Sorry but #{@word} does not seem to be a valid English word..." %>
+<%      end %>
+<% else %>
+<%=      [0, "Sorry but #{@word} can't be built out of #{@letters}"] %>
+<% end %>
+
+<%= link_to "Play again", new_path %>
